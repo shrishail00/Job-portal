@@ -1,0 +1,9 @@
+{% if user.is_authenticated %}
+ <form method="post" action="{% url'apply_to_jo'job.pk %}">
+    {% csrf_token %}
+     <button type="submit">Apply Now</button>
+ </form>
+{% else %}
+ <a href="{% url 'login' %}">Login to Apply</a>
+{% endif %}
+   
